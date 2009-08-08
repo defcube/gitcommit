@@ -23,7 +23,6 @@ def run_tests():
     try:
         managepy = find_managepy()
     except NotFoundError:
-        print 'not found'
         return
     result = os.system(managepy + " test")
     if result != 0:
