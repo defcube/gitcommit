@@ -30,7 +30,6 @@ def run_tests():
         raise TestsFailedError
 
 if __name__ == '__main__':
-    print "running it"
     try:
         run_tests()
     except TestsFailedError:
