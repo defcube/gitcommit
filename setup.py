@@ -1,8 +1,8 @@
 from distutils.core import setup
-import __init__
+import gitcommitlib
 
 setup(name='GitCommit',
-      version=__init__.get_version(),
+      version=gitcommitlib.get_version(),
       author_email='gattster@gmail.com',
       author='Philip Gatt',
       py_modules=['gitcommitlib'],

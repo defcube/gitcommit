@@ -1,7 +1,18 @@
 #!/usr/bin/env python
-import gitcommitlib, os
+import gitcommitlib, os, optparse
+
+def parse_options():
+    from optparse import OptionParser
+    parser = OptionParser()
+    parser.add_option('-v', dest='show_version', action='store_true')
+    (options, args) = parser.parse_args()
+    return options
 
 if __name__ == '__main__':
+    options = parse_options()
+    if options.show_version:
+        print "Version %s" % gitcommitlib.get_version()
+        exit()
     try:
         gitcommitlib.run_tests()
     except gitcommitlib.TestsFailedError:
