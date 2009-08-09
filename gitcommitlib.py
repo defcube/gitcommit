@@ -28,11 +28,5 @@ def run_tests():
     if result != 0:
         raise TestsFailedError
 
-if __name__ == '__main__':
-    try:
-        run_tests()
-    except TestsFailedError:
-        exit()
-    os.system("git commit -a -v")    
     
         

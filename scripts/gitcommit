@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+import gitcommitlib, os
+
+if __name__ == '__main__':
+    try:
+        gitcommitlib.run_tests()
+    except gitcommitlib.TestsFailedError:
+        exit()
+    os.system("git commit -a -v")    
