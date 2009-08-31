@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import os
+import os, sys
 
 class NotFoundError(RuntimeError):
     pass
@@ -7,7 +7,7 @@ class NotFoundError(RuntimeError):
 class TestsFailedError(RuntimeError):
     pass
 
-def find_managepy():
+def find_managepy(): 
     curpath = os.getcwd()
     while True:
         curdirlist = os.listdir(curpath)
@@ -28,11 +28,21 @@ def run_tests():
     if result != 0:
         raise TestsFailedError
 
+def check_for_todos():
+    result = os.system("git grep -ni '#[ \t]*todo'")
+    if result == 0:
+        print "There are TODO statements. Continue with commit? [y/N] ",
+        c = sys.stdin.read(1)
+        if c.lower() != 'y':
+            print "aborting . . . "
+            exit()
+
 if __name__ == '__main__':
     try:
         run_tests()
     except TestsFailedError:
         exit()
+    check_for_todos()
     os.system("git commit -a -v")    
     
         
