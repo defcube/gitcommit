@@ -17,4 +17,5 @@ if __name__ == '__main__':
         gitcommitlib.run_tests()
     except gitcommitlib.TestsFailedError:
         exit()
+    gitcommitlib.check_for_todos()
     os.system("git commit -a -v")    

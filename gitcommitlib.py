@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import os, sys
-VERSION = (0,9,2)
+VERSION = (0,9,3)
 
 def get_version():
     strversion = [str(x) for x in VERSION]
@@ -42,12 +42,5 @@ def check_for_todos():
             print "aborting . . . "
             exit()
 
-if __name__ == '__main__':
-    try:
-        run_tests()
-    except TestsFailedError:
-        exit()
-    check_for_todos()
-    os.system("git commit -a -v")    
     
         
