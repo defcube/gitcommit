@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 import os, sys
+VERSION = (0,9,1)
+
+def get_version():
+    strversion = [str(x) for x in VERSION]
+    return '.'.join(strversion)
 
 class NotFoundError(RuntimeError):
     pass
