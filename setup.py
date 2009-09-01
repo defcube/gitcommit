@@ -7,5 +7,5 @@ setup(name='GitCommit',
       author='Philip Gatt',
       py_modules=['gitcommitlib'],
       scripts=['scripts/gitcommit'],
-      description='Does a few checks before running "git commit -av". Checks include running django unit tests and checking for TODO statements',
+      description='GitCommit is a free Python based script that does a few checks before running "git commit -av". Checks include running django unit tests and checking for TODO statements.',
       )
