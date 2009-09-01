@@ -1,15 +1,12 @@
 #!/usr/bin/env python
 import os, sys
-VERSION = (0,9,3)
+VERSION = (0,9,4)
 
 def get_version():
     strversion = [str(x) for x in VERSION]
     return '.'.join(strversion)
 
 class NotFoundError(RuntimeError):
-    pass
-
-class TestsFailedError(RuntimeError):
     pass
 
 def find_managepy(): 
@@ -31,16 +28,19 @@ def run_tests():
         return
     result = os.system(managepy + " test")
     if result != 0:
-        raise TestsFailedError
+        confirm("Tests had errors.")
 
 def check_for_todos():
     result = os.system("git grep -ni '#[ \t]*todo'")
     if result == 0:
-        print "There are TODO statements. Continue with commit? [y/N] ",
+        confirm("There are TODO statements.")
+        
+def confirm(question_str):
+        print ("%s Continue with commit? [y/N] " % question_str), 
         c = sys.stdin.read(1)
         if c.lower() != 'y':
             print "aborting . . . "
             exit()
-
+    
     
         

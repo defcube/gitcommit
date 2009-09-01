@@ -13,9 +13,6 @@ if __name__ == '__main__':
     if options.show_version:
         print "Version %s" % gitcommitlib.get_version()
         exit()
-    try:
-        gitcommitlib.run_tests()
-    except gitcommitlib.TestsFailedError:
-        exit()
     gitcommitlib.check_for_todos()
+    gitcommitlib.run_tests()
     os.system("git commit -a -v")    
