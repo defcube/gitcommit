@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import os, sys
-VERSION = (0,9,4)
+VERSION = (0,9,5)
 
 def get_version():
     strversion = [str(x) for x in VERSION]
@@ -31,7 +31,7 @@ def run_tests():
         confirm("Tests had errors.")
 
 def check_for_todos():
-    result = os.system("git grep -ni '#[ \t]*todo'")
+    result = os.system("git grep -I -ni '#[ \t]*todo'")
     if result == 0:
         confirm("There are TODO statements.")
         
