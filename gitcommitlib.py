@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import os, sys
-VERSION = (0,9,5)
+VERSION = (0,9,6)
 
 def get_version():
     strversion = [str(x) for x in VERSION]
@@ -37,7 +37,8 @@ def check_for_todos():
         
 def confirm(question_str):
         print ("%s Continue with commit? [y/N] " % question_str), 
-        c = sys.stdin.read(1)
+        c = sys.stdin.read()
+        c = c.strip()
         if c.lower() != 'y':
             print "aborting . . . "
             exit()
