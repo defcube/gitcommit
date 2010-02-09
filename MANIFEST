@@ -2,3 +2,4 @@ README
 gitcommitlib.py
 setup.py
 scripts/gitcommit
+scripts/safe_git

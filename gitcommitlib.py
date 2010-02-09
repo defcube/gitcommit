@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import os, sys
-VERSION = (0,9,6)
+VERSION = (0,9,8)
 
 def get_version():
     strversion = [str(x) for x in VERSION]
