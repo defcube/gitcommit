@@ -36,12 +36,12 @@ def check_for_todos():
         confirm("There are TODO statements.")
         
 def confirm(question_str):
-        print ("%s Continue with commit? [y/N] " % question_str), 
-        c = sys.stdin.read()
-        c = c.strip()
-        if c.lower() != 'y':
-            print "aborting . . . "
-            exit()
+    print ("%s Continue with commit? [y/N] " % question_str), 
+    c = sys.stdin.readline()
+    c = c.strip()
+    if c.lower() != 'y':
+        print "aborting . . . "
+        exit()
     
     
         
