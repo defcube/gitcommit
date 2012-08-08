@@ -1,0 +1,5 @@
+Runs a check for #TODO type comments and warns if any are found. You can create a .gitcommitignore file and list any prefixes that should be ignored from the #TODO check. 
+
+If there is a manage.py, it runs django unit tests.
+
+Finally, it launches `git commit -av`
