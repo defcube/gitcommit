@@ -4,7 +4,8 @@ import gitcommitlib, sys, subprocess
 if __name__ == '__main__':
     newargs = list(sys.argv)
     if 'commit' in newargs:
-        gitcommitlib.confirm("You asked to commit without using gitcommit, are you sure?")
+        gitcommitlib.confirm(
+            "You asked to commit without using gitcommit, are you sure?")
     del newargs[0]
     newargs.insert(0, '/usr/bin/env')
     newargs.insert(1, 'git')
